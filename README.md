@@ -81,4 +81,5 @@ We can get the running time of other algorithms by analogy with the above method
 
 The Vgg-16 and Resnet-50 speedup effects can be obtained by running programs under the folder `OCPA/speedup`. As shown in the following figure：
 
-![Figure 9](https://github.com/sunnchioo/OCPA/blob/main/speedup/figure9.png "speedup")
+<!--![Figure 9](https://github.com/sunnchioo/OCPA/blob/main/speedup/figure9.png "speedup")-->
+<img src="https://github.com/sunnchioo/OCPA/blob/main/speedup/figure9.png" width="50%">
