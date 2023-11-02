@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
     }
     open_kernel.close();
 
-    ofstream time_file("ECR/ECR/time_vgg/batchsize" + argv[1] + string(".txt"));
+        ofstream time_file("ECR/ECR/time_vgg/batchsize" + std::to_string(atoi(argv[1])) + string(".txt"));
     // resnet is 32, vgg is 16, sp is 9, resnet is 49
     for (int i = 0; i < 16; i++)
     {
