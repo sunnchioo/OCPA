@@ -55,8 +55,8 @@ half *LoadvggKernel(string name, int *&kernel_width, int *&kernel_height, int ba
 
 // half return type should be replaced with float
 
-float *LoadKernel(string name, int *&kernel_width, int *&kernel_height, int batch_size, int index)
-{
+float *LoadKernel(string name, int *&kernel_width, int *&kernel_height,
+                  int batch_size, int index) {
     float temp;
     // ifstream kernel_shape("/home/syt/conv_pool/conv_pool/dataset/kernel/kernel_shape/" + name);
     // for (int i = 0; i < 2; i++)
@@ -73,11 +73,12 @@ float *LoadKernel(string name, int *&kernel_width, int *&kernel_height, int batc
     for (int i = 0; i < batch_size; i++)
     {
         ifstream kernel_data("/home/syt/conv_pool/conv_pool/dataset/resnetdataset_all/kernel/" + name);
-        for (int j = i * (*kernel_width * *kernel_height); j < (i + 1) * (*kernel_width * *kernel_height); j++) {
+        for (int j = i * (*kernel_width * *kernel_height);
+             j < (i + 1) * (*kernel_width * *kernel_height); j++) {
             kernel_data >> temp;
             kernel[j]=__float2half(temp);
-       }
-       kernel_data.close();
+        }
+        kernel_data.close();
     }
 
     return kernel;
@@ -142,9 +143,10 @@ float *LoadConvWeight(int *&fea_width, int *&fea_height, int batch_size, int ind
     for (int i = 0; i < batch_size; i++)
     {
         ifstream fea_data("/home/syt/conv_pool/conv_pool/dataset/resnetdataset_all/feature/" + name[index]);
-        for (int j = i * (*fea_width * *fea_height); j < (i + 1) * (*fea_width * *fea_height); j++) {
+        for (int j = i * (*fea_width * *fea_height);
+             j < (i + 1) * (*fea_width * *fea_height); j++) {
             fea_data >> feature[j];
-        }    
+        }
         fea_data.close();
     }
 
